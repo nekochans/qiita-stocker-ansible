@@ -7,7 +7,7 @@
     state: directory
 
 # ここから下は本来Ansibleでやるべき事ではないので動作確認したい時だけコメントアウトを解除する
-# アプリケーションの設置とディレクトリの配置等
+# アプリケーションの設置とディレクトリの配置等はCodeDeployで行う
 
 #- name: git clone "{{ qiita_stocker_backend_repository_name }}"
 #  become: no
