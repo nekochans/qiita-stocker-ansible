@@ -1,0 +1,29 @@
+- name: install locate
+  yum : name=mlocate state=latest
+
+- name: install git
+  yum : name=git state=latest
+
+- name: install wget
+  yum : name=wget state=latest
+
+- name: install unzip
+  yum: name=unzip
+
+- name: install gcc
+  yum: name=gcc state=latest
+
+- name: install dstat
+  yum: name=dstat state=latest
+
+- name: install sysstat
+  yum: name=sysstat state=latest
+
+- name: install iotop
+  yum: name=iotop state=latest
+
+- name: install jq
+  yum: name=jq state=latest
+
+- name: install htop
+  yum: name=htop state=latest

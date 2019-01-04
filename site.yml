@@ -1,0 +1,4 @@
+- hosts: qiita-stocker-backend
+  become: yes
+  roles:
+    - common

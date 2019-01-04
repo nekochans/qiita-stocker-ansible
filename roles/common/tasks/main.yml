@@ -1,0 +1,6 @@
+- import_tasks: set-timezone.yml
+- import_tasks: set-locale.yml
+- import_tasks: add-yum-repos.yml
+- import_tasks: os-update.yml
+- import_tasks: command.yml
+- import_tasks: make-swap.yml

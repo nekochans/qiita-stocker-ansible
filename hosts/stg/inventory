@@ -1,0 +1,8 @@
+[qiita-stocker-backend]
+stg-qiita-stocker-api-1a
+
+[all:vars]
+stage=stg
+
+[qiita-stocker-backend:vars]
+env=qiita-stocker-backend-stg
