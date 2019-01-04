@@ -1,0 +1,8 @@
+- name: Install nginx
+  shell: amazon-linux-extras install nginx1.12
+
+- name: Replace nginx.conf
+  template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf owner=root group=root mode=0600
+
+- name: Replace qiita-stocker-backend.conf
+  template: src=qiita-stocker-backend.conf.j2 dest=/etc/nginx/conf.d/qiita-stocker-backend.conf owner=root group=root mode=0600

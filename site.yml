@@ -4,3 +4,5 @@
     - common
     - mysql
     - php
+    - php-fpm
+    - nginx

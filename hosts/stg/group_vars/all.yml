@@ -1,1 +1,2 @@
+vpc_network_address: 10.3.0.0/16
 qiita_stocker_backend_repository_name: qiita-stocker-backend
