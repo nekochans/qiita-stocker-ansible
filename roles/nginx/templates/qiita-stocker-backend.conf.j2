@@ -7,7 +7,7 @@ server {
     server_name _;
 
     # ドキュメントルートの設定
-    root /opt/qiita-stocker-backend/public;
+    root /home/{{ app_user }}/{{ qiita_stocker_backend_repository_name }}/public;
     index index.html index.htm index.php;
 
     # アクセスログの設定
