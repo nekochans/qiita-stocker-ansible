@@ -7,3 +7,4 @@
     - php-fpm
     - nginx
     - composer
+    - qiita-stocker-backend
