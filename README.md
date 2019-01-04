@@ -1,0 +1,2 @@
+# qiita-stocker-ansible
+Webサーバーの構成管理を行う、Docker移行が終わったらこのプロジェクトは不要になる予定
