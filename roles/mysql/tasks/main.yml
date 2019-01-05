@@ -8,6 +8,4 @@
   shell: yum-config-manager --enable mysql56-community
 
 - name: Install MySQL5.6 Client
-  yum : name={{ item }} enablerepo=mysql56-community state=latest
-  with_items:
-    - mysql-community-client
+  yum : name=mysql-community-client enablerepo=mysql56-community state=latest

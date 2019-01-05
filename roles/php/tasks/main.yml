@@ -2,14 +2,15 @@
   shell: amazon-linux-extras install php7.2 -y
 
 - name: Install PHP7.2 Packages
-  yum : name={{item}} state=present
-  with_items:
-    - php
-    - php-opcache
-    - php-devel
-    - php-opcache
-    - php-mbstring
-    - php-xml
+  yum:
+    state: present
+    name:
+      - php
+      - php-opcache
+      - php-devel
+      - php-opcache
+      - php-mbstring
+      - php-xml
 
 - name: Replace php.ini
   template: src=php.ini.j2 dest=/etc/php.ini owner=root group=root mode=0644
