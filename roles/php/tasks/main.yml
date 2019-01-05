@@ -1,5 +1,5 @@
 - name: Install PHP
-  shell: amazon-linux-extras install php7.2
+  shell: amazon-linux-extras install php7.2 -y
 
 - name: Install PHP7.2 Packages
   yum : name={{item}} state=present
