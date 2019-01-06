@@ -1,0 +1,2 @@
+- name: Replace php-fpm www.conf
+  template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf owner=root group=root mode=0600

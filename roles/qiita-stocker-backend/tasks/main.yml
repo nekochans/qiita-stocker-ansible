@@ -1,0 +1,43 @@
+- name: change App Directory Permission
+  file:
+    path: /home/{{ app_user }}
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    mode: 0755
+    state: directory
+
+# ここから下は本来Ansibleでやるべき事ではないので動作確認したい時だけコメントアウトを解除する
+# アプリケーションの設置とディレクトリの配置等はCodeDeployで行う
+
+#- name: git clone "{{ qiita_stocker_backend_repository_name }}"
+#  become: no
+#  git:
+#    repo: https://github.com/nekochans/{{ qiita_stocker_backend_repository_name }}.git
+#    version: master
+#    dest: /home/{{ app_user }}/{{ qiita_stocker_backend_repository_name }}
+#    accept_hostkey: yes
+#    force: yes
+#
+#- name : Start nginx
+#  service: name=nginx state=restarted enabled=yes
+#
+#- name : Start php-fpm
+#  service: name=php-fpm state=restarted enabled=yes
+#
+#- name: change App Repository Directory Permission
+#  file:
+#    path: /home/{{ app_user }}/{{ qiita_stocker_backend_repository_name }}
+#    owner: "{{ app_user }}"
+#    group: "{{ app_user }}"
+#    mode: 0755
+#    state: directory
+#    recurse: yes
+#
+#- name: change storage Permission
+#  file:
+#    path: /home/{{ app_user }}/{{ qiita_stocker_backend_repository_name }}/storage
+#    owner: "{{ app_user }}"
+#    group: "{{ app_user }}"
+#    mode: 0777
+#    state: directory
+#    recurse: yes

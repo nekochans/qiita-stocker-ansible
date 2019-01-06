@@ -1,0 +1,16 @@
+- name: Download composer installer
+  get_url:
+    url: https://getcomposer.org/installer
+    dest: /usr/local/src
+
+- name: Install composer
+  shell: php /usr/local/src/installer --install-dir=/usr/bin
+
+- name: move composer.phar to composer
+  command: mv /usr/bin/composer.phar /usr/bin/composer
+
+- name: Change miller server to packagist.jp
+  command: composer config -g repos.packagist composer https://packagist.jp
+
+- name: Install prestissimo Plugin
+  command: composer global require hirak/prestissimo

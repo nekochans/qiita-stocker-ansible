@@ -1,0 +1,5 @@
+- name: set locale
+  shell: localectl set-locale LANG=ja_JP.UTF-8
+
+- name: set keymap
+  shell: localectl set-keymap jp106

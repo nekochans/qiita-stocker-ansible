@@ -1,0 +1,35 @@
+- name: Set fact swapfile
+  set_fact:
+    swap_file_path: /swapfile
+
+- name: Make swapfile
+  command: dd if=/dev/zero of={{ swap_file_path }} bs={{ ansible_memtotal_mb * 2 }} count=1M
+  args:
+    creates: "{{ swap_file_path }}"
+
+- name: chmod swapfile
+  file:
+    path: "{{ swap_file_path }}"
+    mode: 0600
+
+- name: Swapfile exists?
+  command: file {{ swap_file_path }}
+  register: swap_file
+
+- name: Make Swap Area
+  command: mkswap {{ swap_file_path }}
+  when: swap_file.stdout.find('swap file') == -1
+
+- name: swapon
+  command: swapon {{ swap_file_path }}
+  when: ansible_swaptotal_mb < 1
+
+- name: mount swapfile
+  mount:
+    name: swap
+    src: "{{ swap_file_path }}"
+    fstype: swap
+    opts: defaults
+    passno: 0
+    dump: 0
+    state: present

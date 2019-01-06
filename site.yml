@@ -1,0 +1,10 @@
+- hosts: qiita-stocker-backend
+  become: yes
+  roles:
+    - common
+    - mysql
+    - php
+    - php-fpm
+    - nginx
+    - composer
+    - qiita-stocker-backend
