@@ -7,4 +7,5 @@
     - php-fpm
     - nginx
     - composer
+    - aws-codedeploy-agent
     - qiita-stocker-backend
