@@ -1,0 +1,9 @@
+- name: install dependence-packages
+  yum:
+    state: present
+    name:
+      - perl-Switch
+      - perl-DateTime
+      - perl-Sys-Syslog
+      - perl-LWP-Protocol-https
+      - perl-Digest-SHA.x86_64
