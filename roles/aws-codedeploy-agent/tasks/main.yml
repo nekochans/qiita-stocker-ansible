@@ -1,0 +1,19 @@
+- name: Install ruby
+  shell: amazon-linux-extras install ruby2.4 -y
+
+- name: Download aws-codedeploy-agent Installer
+  become: no
+  shell: aws s3 cp s3://aws-codedeploy-ap-northeast-1/latest/install . --region ap-northeast-1
+  args:
+    chdir: /home/{{ app_user }}
+
+- name: chmod aws-codedeploy-agent Installer
+  file:
+    path: /home/{{ app_user }}/install
+    mode: 0755
+
+- name: Install aws-codedeploy-agent
+  shell: /home/{{ app_user }}/install auto
+
+- name: aws-codedeploy-agent start
+  service: enabled=yes name=codedeploy-agent state=started
