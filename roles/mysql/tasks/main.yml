@@ -4,8 +4,8 @@
 - name: Disable MySQL 8.0 Repository
   shell: yum-config-manager --disable mysql80-community
 
-- name: Enable MySQL 5.6 Repository
-  shell: yum-config-manager --enable mysql56-community
+- name: Enable MySQL 5.7 Repository
+  shell: yum-config-manager --enable mysql57-community
 
-- name: Install MySQL5.6 Client
-  yum : name=mysql-community-client enablerepo=mysql56-community state=latest
+- name: Install MySQL5.7 Client
+  yum : name=mysql-community-client enablerepo=mysql57-community state=latest
